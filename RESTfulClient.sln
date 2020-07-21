@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulClient", "RESTfulClient\RESTfulClient.csproj", "{07E5C265-3570-4CAF-8C60-221BC26BFFDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07E5C265-3570-4CAF-8C60-221BC26BFFDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E5C265-3570-4CAF-8C60-221BC26BFFDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E5C265-3570-4CAF-8C60-221BC26BFFDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E5C265-3570-4CAF-8C60-221BC26BFFDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D799143B-0C52-4E4D-A89F-E0FBDD030673}
+	EndGlobalSection
+EndGlobal
