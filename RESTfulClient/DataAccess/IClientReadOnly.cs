@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace RESTfulClient.Data
+namespace RESTfulClient.DataAccess
 {
     public interface IClientReadOnly
     {

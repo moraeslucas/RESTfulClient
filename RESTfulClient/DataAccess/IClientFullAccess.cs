@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RESTfulClient.Data
+namespace RESTfulClient.DataAccess
 {
     public interface IClientFullAccess : IClientReadOnly
     {
