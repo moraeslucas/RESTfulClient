@@ -15,28 +15,70 @@ namespace RESTfulClient.Controllers
     //TODO: This application can be secured by uncommenting this "Authorize"
     //[Authorize]
     [ApiController]
+    /* The tokens [controller] and [action] are replaced with the values of the
+     * controller name (in this case Client) and action name, which is 'GetAll' and so on
+     */
+    [Route("api/[controller]/[action]")]
     public class ClientController : ControllerBase
     {
-        Data.IClientAccessLayer _client;
+        Data.IClientFullAccess _iClient;
+        Models.Client _client;
 
         //Dependecy Injection via constructor
-        public ClientController(Data.IClientAccessLayer client)
+        public ClientController(Data.IClientFullAccess iClient)
         {
-            _client = client;
+            _iClient = iClient;
         }
 
         [HttpGet]
-        [Route("api/Client/AllClients")]
-        public IEnumerable<Models.Client> AllClients()
+        /*'Task' represents an asynchronous operation. More precisely, it's
+         * an object that encapsulates the state of an asynchronous operation
+         */
+        public async Task<IEnumerable<Models.Client>> GetAll()
         {
-            return _client.GetAllClients();
+            //'await' means it's going to return the control to the caller
+            return await _iClient.GetAllClients();
         }
 
-        [HttpGet]
-        [Route("api/Client/GetClient/{id}")]
-        public Models.Client GetClient(int id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Models.Client>> Get(long id)
         {
-            return _client.GetClient(id);
+            _client = await _iClient.GetClient(id);
+
+            if (_client == null)
+                return NotFound();
+
+            return _client;
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<int>> Create([FromBody] Models.Client client)
+        {
+            if (ModelState.IsValid)
+                return await _iClient.AddClient(client);
+
+            return BadRequest();
+        }
+
+        [HttpPut]
+        public async Task<ActionResult<int>> Update([FromBody] Models.Client client)
+        {
+            if (ModelState.IsValid)
+                return await _iClient.UpdateClient(client);
+
+            return BadRequest();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(long id)
+        {
+            _client = await _iClient.GetClient(id);
+
+            if (_client == null)
+                return NotFound();
+
+            await _iClient.DeleteClient(id);
+            return NoContent();
         }
     }
 }

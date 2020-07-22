@@ -9,7 +9,7 @@ namespace RESTfulClient.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ClientId { get; set; }
+        public long ClientId { get; set; }
 
         [Required]
         public string Name { get; set; }

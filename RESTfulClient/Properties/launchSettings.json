@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/Client/AllClients",
+      "launchUrl": "api/Client/GetAll",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "RESTfulClient": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Client/AllClients",
+      "launchUrl": "api/Client/GetAll",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
