@@ -67,7 +67,7 @@ namespace RESTfulClient
              * It's using default values from Microsoft site
             */
             app.UseCors(policy =>
-                policy.WithOrigins("https://localhost:44358", "https://localhost:44340")
+                policy.WithOrigins("https://localhost:44358", "https://petshopmanager.azurewebsites.net")
                 .WithHeaders(HeaderNames.ContentType, HeaderNames.Authorization)
                 .AllowAnyMethod()
                 .AllowCredentials()

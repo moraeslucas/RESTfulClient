@@ -34,51 +34,96 @@ namespace RESTfulClient.Controllers
         /*'Task' represents an asynchronous operation. More precisely, it's
          * an object that encapsulates the state of an asynchronous operation
          */
-        public async Task<IEnumerable<Models.Client>> GetAll()
+        public async Task<ActionResult<IEnumerable<Models.Client>>> GetAll()
         {
-            //'await' means it's going to return the control to the caller
-            return await _iClient.GetAllClients();
+            try
+            {
+                //'await' means it's going to return the control to the caller
+                return Ok(await _iClient.GetAllClients());   
+            }
+            catch (Exception)
+            {
+                //The exception is logged inside _client's implementation 
+                
+                return StatusCode(500);//'500' means Internal Server Error 
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Models.Client>> Get(long id)
         {
-            _client = await _iClient.GetClient(id);
+            try
+            {
+                _client = await _iClient.GetClient(id);
 
-            if (_client == null)
-                return NotFound();
+                if (_client == null)
+                    return NotFound();
 
-            return _client;
+                return _client;
+            }
+            catch (Exception)
+            {
+                //'500' means Internal Server Error 
+                return StatusCode(500);
+            }
         }
 
         [HttpPost]
         public async Task<ActionResult<int>> Create([FromBody] Models.Client client)
         {
-            if (ModelState.IsValid)
-                return await _iClient.AddClient(client);
+            try
+            {
+                /*The default model adds errors for type conversion
+                 *(like passing a character to something which is 'int')*/
+                if (ModelState.IsValid)
+                    return await _iClient.AddClient(client);
 
-            return BadRequest();
+                /*I could put the reason inside BadRequest's parenthesis 
+                 *(keep this string to a minimum) */
+                return BadRequest();
+            }
+            catch (Exception)
+            {
+                //'500' means Internal Server Error 
+                return StatusCode(500);
+            }
         }
 
         [HttpPut]
         public async Task<ActionResult<int>> Update([FromBody] Models.Client client)
         {
-            if (ModelState.IsValid)
-                return await _iClient.UpdateClient(client);
+            try
+            {
+                if (ModelState.IsValid)
+                    return await _iClient.UpdateClient(client);
 
-            return BadRequest();
+                return BadRequest();
+            }
+            catch (Exception)
+            {
+                //'500' means Internal Server Error 
+                return StatusCode(500);
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(long id)
         {
-            _client = await _iClient.GetClient(id);
+            try
+            {
+                _client = await _iClient.GetClient(id);
 
-            if (_client == null)
-                return NotFound();
+                if (_client == null)
+                    return NotFound();
 
-            await _iClient.DeleteClient(id);
-            return NoContent();
+                await _iClient.DeleteClient(id);
+                return NoContent();
+            }
+            catch (Exception)
+            {
+                //'500' means Internal Server Error 
+                return StatusCode(500);
+            }
         }
     }
 }

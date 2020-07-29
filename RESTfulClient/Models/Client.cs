@@ -21,8 +21,6 @@ namespace RESTfulClient.Models
         
         public string Email { get; set; }
 
-        public int? PhotoFileId { get; set; }
-
         [Required]
         public string ModifiedBy { get; set; }
 
