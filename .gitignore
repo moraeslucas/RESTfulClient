@@ -17,3 +17,7 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+*.pubxml
+RESTfulClient/Properties/PublishProfiles/RESTfulClient - Web Deploy.pubxml.user
+RESTfulClient/Properties/serviceDependencies.RESTfulClient - Web Deploy.json
+RESTfulClient/Properties/serviceDependencies.RESTfulClient - Web Deploy.json.user
