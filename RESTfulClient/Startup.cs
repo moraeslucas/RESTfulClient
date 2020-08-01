@@ -41,11 +41,24 @@ namespace RESTfulClient
             services.AddScoped<DataAccess.IClientFullAccess, DataAccess.ClientDataAccess>();
 
             services.AddControllers();
+
+            // Register the Swagger generator. Here you can define 1 or more Swagger documents
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+
+            /* Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+             * specifying the Swagger JSON endpoint. */
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.RoutePrefix = string.Empty;
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

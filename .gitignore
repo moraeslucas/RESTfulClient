@@ -21,3 +21,4 @@ bin-release/
 RESTfulClient/Properties/PublishProfiles/RESTfulClient - Web Deploy.pubxml.user
 RESTfulClient/Properties/serviceDependencies.RESTfulClient - Web Deploy.json
 RESTfulClient/Properties/serviceDependencies.RESTfulClient - Web Deploy.json.user
+*.url
