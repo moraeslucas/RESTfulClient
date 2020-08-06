@@ -39,7 +39,7 @@ namespace RESTfulClient.Controllers
             try
             {
                 //'await' means it's going to return the control to the caller
-                return Ok(await _iClient.GetAllClients());   
+                return Ok(await _iClient.GetAllClients());
             }
             catch (Exception)
             {

@@ -14,7 +14,7 @@ This is a Restful Service containing web applications Services that return their
 ## How to run this service
 You will need the following:
 -	.NET Core 3.1 or higher;
--	SQL Server 2019 or above;
+-	SQL Server 2019;
 -	Run the CREATE script on the document *Restful-ApplicationGuide.pdf*
 
-After that, just execute *RunRestfulClient.bat* to open the index page of this service.
+After you clone this repo, go ahead and execute *RunRestfulClient.bat* to open the index page of this service.

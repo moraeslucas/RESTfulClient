@@ -6,7 +6,9 @@ bin-release/
 
 # Other files and folders
 .settings/
+.vs/
 *.docx
+*.user
 
 # Executables
 *.swf

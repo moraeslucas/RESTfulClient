@@ -18,7 +18,6 @@ namespace RESTfulClient.DataAccess
             _logger = logger;
         }
 
-        //Get all Client(s)
         public async Task<IEnumerable<Models.Client>> GetAllClients()
         {
             try
