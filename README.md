@@ -1,7 +1,6 @@
 # RESTfulClient
 
 RESTful web service with .NET Core and C#; It contains the main HTTP methods.
-
 ![screenshot](./ClientMethods.jpg)
 
 ## General Description
@@ -11,10 +10,12 @@ This is a Restful Service containing web methods that return their response in J
  {"clientId":2,"name":"Will Doe","address":"2st Street", "phoneNumber":null,"email":"will@provider.com","photoFileId":null,
 "modifiedBy":"Lucas Moraes","modifiedOn":"2020-07-01T23:25:46.546"}]
 
+<br>
+
 ## How to run this service
 You will need the following:
--	.NET Core 3.1 or higher;
--	SQL Server 2019;
--	Run the CREATE script on the document *Restful-ApplicationGuide.pdf*
+-	.NET 5;
+-	Visual Studio 2019;
+-	SQL Server 2019 (Script.sql has the SQL commands);
 
-After you clone this repo, go ahead and execute *RunRestfulClient.bat* to open the index page of this service.
+**PS:** *RunRestfulClient.bat* opens the index page of this service.
