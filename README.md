@@ -1,6 +1,6 @@
 # RESTfulClient
 
-RESTful web service with .NET Core and C#; It contains the main HTTP methods.
+RESTful web service with .NET 5, C# and SQL Server; It contains the main HTTP methods
 ![screenshot](./ClientMethods.jpg)
 
 ## General Description
