@@ -38,7 +38,7 @@ namespace RESTfulClient
               Otherwise a new context will be created and returned.*/
             services.AddDbContext<Models.petshopdbContext>(options => options.UseSqlServer(connection));
             //While IClientFullAccess is injected (hence decreasing coupling), it implements ClientAccessLayer one
-            services.AddScoped<DataAccess.IClientFullAccess, DataAccess.ClientDataAccess>();
+            services.AddScoped<Data.IClientRepository, Data.ClientRepository>();
 
             services.AddControllers();
 

@@ -5,14 +5,14 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-namespace RESTfulClient.DataAccess
+namespace RESTfulClient.Data
 {
-    public class ClientDataAccess : IClientFullAccess
+    public class ClientRepository : IClientRepository
     {
         private Models.petshopdbContext _context;
-        private readonly ILogger<ClientDataAccess> _logger;
+        private readonly ILogger<ClientRepository> _logger;
 
-        public ClientDataAccess(Models.petshopdbContext context, ILogger<ClientDataAccess> logger)
+        public ClientRepository(Models.petshopdbContext context, ILogger<ClientRepository> logger)
         {
             _context = context;
             _logger = logger;

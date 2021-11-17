@@ -21,11 +21,11 @@ namespace RESTfulClient.Controllers
     [Route("api/[controller]/[action]")]
     public class ClientController : ControllerBase
     {
-        DataAccess.IClientFullAccess _iClient;
+        Data.IClientRepository _iClient;
         Models.Client _client;
 
         //Dependecy Injection via constructor
-        public ClientController(DataAccess.IClientFullAccess iClient)
+        public ClientController(Data.IClientRepository iClient)
         {
             _iClient = iClient;
         }
